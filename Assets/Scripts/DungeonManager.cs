@@ -1,6 +1,7 @@
 // Controlador principal que conecta MazeGenerator y RoomRenderer
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static DungeonGenerator;
 
 public class DungeonManager : MonoBehaviour
@@ -24,5 +25,22 @@ public class DungeonManager : MonoBehaviour
         // Renderiza las habitaciones en el mundo
         RoomRenderer renderizador = new RoomRenderer(prefabsHabitaciones, separacion, tamañoCalabozo);
         renderizador.Render(tableroGenerado);
+    }
+
+    private void OnGUI()
+    {
+        // Botón en pantalla para regenerar el calabozo
+        float w = Screen.width / 2;
+        float h = Screen.height - 80;
+        if (GUI.Button(new Rect(w, h, 250, 50), "Regenerate Dungeon"))
+        {
+            RegenerateDungeon();
+        }
+    }
+
+    void RegenerateDungeon()
+    {
+        // Recarga la escena actual para generar un nuevo calabozo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
