@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/Resources/QuickTool_Style.uss?fileID=7433441132597879392&amp;guid=c7650a0f6960dcd4c96df7c0d888650d&amp;type=3#QuickTool_Style" />
+    <ui:VisualElement class="quicktool-button unity-button">
+        <ui:VisualElement class="quicktool-button-icon" />
+    </ui:VisualElement>
+</ui:UXML>
